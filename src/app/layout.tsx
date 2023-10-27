@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import './globals.css';
+import { Bars3Icon } from '@heroicons/react/24/outline';
+
+import Banner from '@/components/banner';
+import Header from '@/components/header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html className="h-full" lang="en">
-      <body className={`h-full ${inter.className}`}>{children}</body>
+      <body className={`h-full ${inter.className}`}>
+        <Header />
+        <main className="relative bg-white">{children}</main>
+      </body>
     </html>
   );
 }
